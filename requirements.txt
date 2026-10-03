@@ -1,6 +1,4 @@
 streamlit
 pandas
 scikit-learn
-joblib
-tabpfn-client
-tabpfn
+tabpfn-client>=0.6.1
