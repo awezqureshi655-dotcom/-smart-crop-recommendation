@@ -1,103 +1,221 @@
-import streamlit as st
-import pandas as pd
-import joblib
+importstreamlitasst
+importpandasaspd
+importos
+fromtabpfn_clientimportTabPFNClassifier
 
-
-# TabPFN API key
-
-
-# Load dataset
-df = pd.read_csv("crop_data.csv")
+#--------------------------------------------------
+#PAGESETTINGS
+#--------------------------------------------------
 
 st.set_page_config(
-    page_title="AI Smart Crop Recommendation",
-    page_icon="🌱",
-    layout="centered"
+page_title="AISmartCropRecommendation",
+page_icon="🌱",
+layout="centered"
 )
 
-st.title("🌱 AI-Based Smart Crop Recommendation System")
-st.write("Enter the soil and weather conditions to get AI-based crop recommendations.")
+#--------------------------------------------------
+#TABPFNAUTHENTICATION
+#--------------------------------------------------
+
+#StreamlitSecretscontainsTABPFN_TOKEN.
+#MakesureitisavailabletoTabPFN-client.
+os.environ["TABPFN_TOKEN"]=st.secrets["TABPFN_TOKEN"]
+
+#--------------------------------------------------
+#LOADDATA
+#--------------------------------------------------
+
+df=pd.read_csv("crop_data.csv")
+
+features=[
+"N",
+"P",
+"K",
+"temperature",
+"humidity",
+"ph",
+"rainfall"
+]
+
+#--------------------------------------------------
+#APPTITLE
+#--------------------------------------------------
+
+st.title("🌱AI-BasedSmartCropRecommendationSystem")
+
+st.write(
+"Enterthesoilandweatherconditionsbelowtogetan"
+"AI-basedcroprecommendationusingTabPFN."
+)
 
 st.divider()
 
-st.subheader("Enter Farm Conditions")
+#--------------------------------------------------
+#INPUTS
+#--------------------------------------------------
 
-col1, col2 = st.columns(2)
+st.subheader("🌾Soil&WeatherConditions")
 
-with col1:
-    N = st.number_input("Nitrogen (N)", min_value=0.0, value=90.0)
-    P = st.number_input("Phosphorus (P)", min_value=0.0, value=42.0)
-    K = st.number_input("Potassium (K)", min_value=0.0, value=43.0)
-    temperature = st.number_input("Temperature (°C)", value=20.88)
+N=st.number_input(
+"Nitrogen(N)",
+min_value=0.0,
+max_value=200.0,
+value=90.0
+)
 
-with col2:
-    humidity = st.number_input("Humidity (%)", value=82.0)
-    ph = st.number_input("Soil pH", min_value=0.0, max_value=14.0, value=6.5)
-    rainfall = st.number_input("Rainfall (mm)", min_value=0.0, value=202.94)
+P=st.number_input(
+"Phosphorus(P)",
+min_value=0.0,
+max_value=200.0,
+value=42.0
+)
+
+K=st.number_input(
+"Potassium(K)",
+min_value=0.0,
+max_value=200.0,
+value=43.0
+)
+
+temperature=st.number_input(
+"Temperature(°C)",
+min_value=-10.0,
+max_value=60.0,
+value=20.88
+)
+
+humidity=st.number_input(
+"Humidity(%)",
+min_value=0.0,
+max_value=100.0,
+value=82.0
+)
+
+ph=st.number_input(
+"SoilpH",
+min_value=0.0,
+max_value=14.0,
+value=6.5
+)
+
+rainfall=st.number_input(
+"Rainfall(mm)",
+min_value=0.0,
+max_value=1000.0,
+value=202.94
+)
+
+st.divider()
+
+#--------------------------------------------------
+#RECOMMENDATION
+#--------------------------------------------------
+
+ifst.button("🌱RecommendCrop",use_container_width=True):
+
+withst.spinner("TabPFNAIisanalyzingtheconditions..."):
+
+try:
+#Trainingdata
+X=df[features]
+y=df["label"]
+
+#CreateTabPFNmodel
+model=TabPFNClassifier(
+model_path="v3.5_default",
+n_estimators=8
+)
+
+#TrainTabPFNusingthedataset
+model.fit(X,y)
+
+#Userinput
+new_input=pd.DataFrame([{
+"N":N,
+"P":P,
+"K":K,
+"temperature":temperature,
+"humidity":humidity,
+"ph":ph,
+"rainfall":rainfall
+}])
+
+#Prediction
+prediction=model.predict(new_input)[0]
+
+#Probabilities
+probabilities=model.predict_proba(new_input)[0]
+classes=model.classes_
+
+#Top3
+top3_indices=probabilities.argsort()[-3:][::-1]
+
+st.success(
+f"🌱RecommendedCrop:{prediction.upper()}"
+)
+
+st.subheader("📊Top3AIRecommendations")
+
+forrank,indexinenumerate(top3_indices,start=1):
+
+crop=classes[index]
+probability=probabilities[index]*100
+
+st.write(
+f"**{rank}.{crop.upper()}—"
+f"{probability:.2f}%modelconfidence**"
+)
+
+st.progress(
+min(float(probability)/100,1.0)
+)
 
 st.divider()
 
-if st.button("🌾 Recommend Crop", use_container_width=True):
+#--------------------------------------------------
+#CROPINFORMATION
+#--------------------------------------------------
 
-    features = [
-        "N",
-        "P",
-        "K",
-        "temperature",
-        "humidity",
-        "ph",
-        "rainfall"
-    ]
+crop_rows=df[
+df["label"].str.lower()==str(prediction).lower()
+]
 
-    new_input = pd.DataFrame([{
-        "N": N,
-        "P": P,
-        "K": K,
-        "temperature": temperature,
-        "humidity": humidity,
-        "ph": ph,
-        "rainfall": rainfall
-    }])
+ifnotcrop_rows.empty:
 
-    X = df[features]
-    y = df["label"]
+crop_info=crop_rows.iloc[0]
 
-    model = joblib.load("tabpfn_model.pkl")
+st.subheader("🌾CropInformation")
 
-    probabilities = model.predict_proba(new_input)[0]
-    classes = model.classes_
+col1,col2=st.columns(2)
 
-    top3_indices = probabilities.argsort()[-3:][::-1]
+withcol1:
+st.write(
+f"**Season:**{crop_info['season']}"
+)
+st.write(
+f"**SoilType:**{crop_info['soil_type']}"
+)
 
-    recommended_crop = classes[top3_indices[0]]
-
-    st.success(
-        f"Recommended Crop: {recommended_crop.upper()}"
-    )
-
-    st.subheader("🌱 Top 3 AI Recommendations")
-
-    for rank, index in enumerate(top3_indices, start=1):
-        crop = classes[index]
-        probability = probabilities[index] * 100
-
-        st.write(
-            f"**{rank}. {crop.upper()} — {probability:.2f}%**"
-        )
-
-    crop_info = df[df["label"] == recommended_crop].iloc[0]
-
-    st.subheader("📋 Crop Information")
-
-    st.write("**Season:**", crop_info["season"])
-    st.write("**Soil Type:**", crop_info["soil_type"])
-    st.write("**Water Requirement:**", crop_info["water_need"])
-    st.write("**Market:**", crop_info["market"])
-    st.write("**State:**", crop_info["state"])
-    st.write("**Price per Quintal:** ₹", crop_info["price_per_quintal"])
-
-st.divider()
+withcol2:
+st.write(
+f"**WaterNeed:**{crop_info['water_need']}"
+)
+st.write(
+f"**State:**{crop_info['state']}"
+)
 
 st.caption(
-    "Prototype developed using TabPFN and a curated crop dataset."
+"Note:Thedisplayedpercentagesrepresentthe"
+"TabPFNmodel'sconfidencescores,notguaranteed"
+"real-worldcropsuccessprobabilities."
 )
+
+exceptExceptionase:
+
+st.error("TheTabPFNmodelcouldnotrun.")
+
+st.write(
+"Pleasetryagainaftertheapplicationfinishesloading."
+)
+
+st.code(str(e))
