@@ -1,27 +1,24 @@
-
 import streamlit as st
 import pandas as pd
-import joblib
+from tabpfn_client import TabPFNClassifier, set_access_token
 
-# Load model, encoder and dataset
-model = joblib.load("crop_model.pkl")
-encoder = joblib.load("crop_encoder.pkl")
+# TabPFN API key
+set_access_token("tabpfn_sk_v9AP4_DjZY836MHhILxjrMzPx1Eucq-i3Nx5uZHXCHE")
+
+# Load dataset
 df = pd.read_csv("crop_data.csv")
 
-# Page settings
 st.set_page_config(
     page_title="AI Smart Crop Recommendation",
     page_icon="🌱",
     layout="centered"
 )
 
-# Title
 st.title("🌱 AI-Based Smart Crop Recommendation System")
 st.write("Enter the soil and weather conditions to get AI-based crop recommendations.")
 
 st.divider()
 
-# Input section
 st.subheader("Enter Farm Conditions")
 
 col1, col2 = st.columns(2)
@@ -39,8 +36,17 @@ with col2:
 
 st.divider()
 
-# Recommendation button
 if st.button("🌾 Recommend Crop", use_container_width=True):
+
+    features = [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+    ]
 
     new_input = pd.DataFrame([{
         "N": N,
@@ -52,28 +58,37 @@ if st.button("🌾 Recommend Crop", use_container_width=True):
         "rainfall": rainfall
     }])
 
-    # Get probabilities
-    probabilities = model.predict_proba(new_input)[0]
+    X = df[features]
+    y = df["label"]
 
-    # Top 3 crops
+    model = TabPFNClassifier(
+        model_path="v3.5_default",
+        n_estimators=8
+    )
+
+    model.fit(X, y)
+
+    probabilities = model.predict_proba(new_input)[0]
+    classes = model.classes_
+
     top3_indices = probabilities.argsort()[-3:][::-1]
 
+    recommended_crop = classes[top3_indices[0]]
+
     st.success(
-        f"Recommended Crop: {encoder.classes_[top3_indices[0]].upper()}"
+        f"Recommended Crop: {recommended_crop.upper()}"
     )
 
     st.subheader("🌱 Top 3 AI Recommendations")
 
     for rank, index in enumerate(top3_indices, start=1):
-        crop = encoder.classes_[index]
+        crop = classes[index]
         probability = probabilities[index] * 100
 
         st.write(
             f"**{rank}. {crop.upper()} — {probability:.2f}%**"
         )
 
-    # Details of primary recommendation
-    recommended_crop = encoder.classes_[top3_indices[0]]
     crop_info = df[df["label"] == recommended_crop].iloc[0]
 
     st.subheader("📋 Crop Information")
@@ -88,5 +103,5 @@ if st.button("🌾 Recommend Crop", use_container_width=True):
 st.divider()
 
 st.caption(
-    "Prototype developed using Machine Learning and a curated crop dataset."
+    "Prototype developed using TabPFN and a curated crop dataset."
 )
