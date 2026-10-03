@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from tabpfn_client import TabPFNClassifier
+import joblib
+
 
 # TabPFN API key
 
@@ -61,9 +62,7 @@ if st.button("🌾 Recommend Crop", use_container_width=True):
     X = df[features]
     y = df["label"]
 
-    model = TabPFNClassifier()
-
-    model.fit(X, y)
+    model = joblib.load("tabpfn_model.pkl")
 
     probabilities = model.predict_proba(new_input)[0]
     classes = model.classes_
