@@ -111,7 +111,7 @@ st.divider()
 #RECOMMENDATION
 #--------------------------------------------------
 
-ifst.button("🌱RecommendCrop",use_container_width=True):
+if st.button("🌱 Recommend Crop", use_container_width=True):
 
 withst.spinner("TabPFNAIisanalyzingtheconditions..."):
 
