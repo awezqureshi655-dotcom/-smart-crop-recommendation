@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-from tabpfn_client import TabPFNClassifier, set_access_token
+from tabpfn_client import TabPFNClassifier
 
 # TabPFN API key
-set_access_token(st.secrets["TABPFN_TOKEN"])
+
 
 # Load dataset
 df = pd.read_csv("crop_data.csv")
