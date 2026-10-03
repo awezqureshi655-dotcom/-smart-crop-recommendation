@@ -3,7 +3,7 @@ import pandas as pd
 from tabpfn_client import TabPFNClassifier, set_access_token
 
 # TabPFN API key
-set_access_token("tabpfn_sk_v9AP4_DjZY836MHhILxjrMzPx1Eucq-i3Nx5uZHXCHE")
+set_access_token(st.secrets["TABPFN_TOKEN"])
 
 # Load dataset
 df = pd.read_csv("crop_data.csv")
