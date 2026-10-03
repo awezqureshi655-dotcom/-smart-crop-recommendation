@@ -61,9 +61,7 @@ if st.button("🌾 Recommend Crop", use_container_width=True):
     X = df[features]
     y = df["label"]
 
-    model = TabPFNClassifier(
-    model_path="v3.5_default"
-)
+    model = TabPFNClassifier()
 
     model.fit(X, y)
 
