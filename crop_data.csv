@@ -1,0 +1,107 @@
+N,P,K,temperature,humidity,ph,rainfall,label,market,state,price_per_quintal,last_updated,season,soil_type,water_need
+90,42,43,20.88,82.0,6.5,202.94,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+85,58,41,21.77,80.32,7.04,226.56,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+60,55,44,23.0,82.32,7.84,263.96,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+74,35,40,26.49,80.16,6.98,242.86,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+78,42,42,20.13,81.6,7.63,262.72,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+88,45,40,24.12,83.5,6.2,210.4,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+92,50,45,22.8,80.1,6.8,230.15,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+20,42,42,20.82,82.03,6.5,202.9,rice,dehradun,uttarakhand,3200,2026-02-01,kharif,clayey,high
+104,18,30,23.6,60.3,6.7,140.91,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+108,22,35,22.7,64.2,5.9,132.4,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+95,25,32,25.4,62.1,6.3,120.8,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+101,20,38,24.9,58.7,6.8,115.5,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+99,19,29,21.5,65.3,6.1,108.2,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+105,24,33,26.2,59.9,6.4,125.6,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+110,21,31,23.1,61.8,6.6,138.4,maize,lucknow,uttar pradesh,2100,2026-02-01,kharif,loamy,medium
+40,72,21,21.5,55.3,6.8,78.2,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+45,78,25,23.1,52.4,6.4,85.6,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+38,68,22,18.9,57.1,7.2,68.4,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+50,75,20,20.4,54.8,6.6,92.1,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+42,70,24,22.3,56.2,6.9,80.5,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+48,74,23,19.7,53.9,6.5,74.9,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+35,65,19,24.2,58.0,7.1,88.3,wheat,delhi,delhi,2450,2026-02-01,rabi,loamy,medium
+32,38,18,23.4,78.2,6.5,90.4,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+38,45,22,25.9,74.1,7.2,85.6,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+28,41,20,22.1,82.4,6.8,98.2,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+40,50,25,28.3,76.5,7.5,75.1,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+35,42,19,24.7,79.0,6.2,88.9,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+30,48,24,26.5,75.3,7.0,94.2,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+34,39,21,27.1,81.8,6.9,81.5,cotton,hisar,haryana,7200,2026-02-01,kharif,black,medium
+82,51,31,25.4,72.4,6.8,110.5,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+90,55,35,27.1,78.2,7.1,135.2,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+78,48,28,23.9,70.1,6.5,98.4,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+85,52,32,28.5,75.6,6.9,122.1,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+80,50,30,24.2,74.3,6.7,118.9,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+88,54,34,26.8,76.9,7.2,142.6,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+84,53,33,25.9,73.5,6.6,105.8,sugarcane,saharanpur,uttar pradesh,340,2026-02-01,annual,alluvial,high
+22,61,24,21.4,62.8,6.8,50.4,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+28,65,28,23.5,60.1,6.4,45.2,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+18,58,22,19.2,65.4,7.0,58.9,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+25,62,25,22.7,63.1,6.6,52.1,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+20,60,23,24.1,59.8,6.7,42.6,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+26,64,26,20.8,61.5,6.5,48.7,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+24,59,21,22.3,64.2,6.9,55.3,gram,jaipur,rajasthan,5200,2026-02-01,rabi,sandy loam,low
+42,48,22,15.4,52.1,6.8,42.5,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+48,52,25,17.2,50.3,6.5,38.2,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+38,45,20,13.9,55.8,7.1,52.1,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+45,50,24,16.1,53.4,6.7,46.9,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+40,47,21,14.5,54.2,6.9,35.4,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+46,54,26,18.0,51.1,6.4,49.2,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+41,49,23,16.5,52.9,7.0,41.7,barley,meerut,uttar pradesh,1900,2026-02-01,rabi,loamy,low
+32,44,20,18.5,58.2,6.8,32.4,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+38,48,24,22.1,55.4,6.5,28.6,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+28,40,18,16.4,62.1,7.2,38.9,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+35,45,22,20.3,57.8,6.7,34.2,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+30,42,21,17.9,59.3,6.9,26.5,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+36,47,25,21.5,56.0,6.6,37.1,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+33,43,23,19.1,58.5,7.1,30.8,mustard,alwar,rajasthan,5800,2026-02-01,rabi,alluvial,low
+22,48,15,24.5,82.4,6.5,62.8,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+26,52,18,27.2,80.1,6.8,58.2,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+18,45,14,22.1,85.6,6.2,71.4,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+25,50,16,26.4,81.9,6.7,65.1,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+20,47,13,23.8,83.4,6.4,52.6,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+28,54,19,28.0,79.5,6.9,68.9,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+23,49,17,25.1,82.0,6.6,60.3,groundnut,ahmedabad,gujarat,6100,2026-02-01,kharif,sandy,medium
+25,40,22,23.4,75.2,6.8,82.4,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+30,45,26,26.1,72.4,6.5,78.1,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+22,38,20,21.8,78.9,7.1,94.6,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+28,42,24,24.9,74.3,6.7,85.2,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+24,41,23,22.5,76.8,6.9,68.5,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+29,46,27,27.3,71.0,6.6,91.3,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+26,43,25,24.2,75.7,7.0,80.8,soybean,indore,madhya pradesh,4600,2026-02-01,kharif,loamy,medium
+32,44,18,21.4,68.5,6.7,64.2,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+38,48,22,23.9,65.2,6.4,58.9,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+28,40,16,19.2,71.4,7.2,72.1,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+35,45,20,22.5,67.9,6.6,65.8,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+30,42,19,20.1,70.3,6.9,52.4,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+36,47,23,24.8,64.1,6.5,69.7,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+33,43,21,22.0,68.0,7.0,62.3,sunflower,hubli,karnataka,5400,2026-02-01,zaid,loamy,low
+24,42,48,18.5,88.4,6.2,62.4,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+28,46,52,21.2,85.1,5.9,58.9,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+19,39,45,16.4,91.8,6.5,70.2,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+26,44,50,20.0,87.3,6.1,65.4,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+22,41,47,17.1,89.5,6.3,54.1,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+29,47,54,22.4,84.0,6.0,68.3,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+25,43,49,19.3,87.9,6.2,61.6,potato,agra,uttar pradesh,1200,2026-02-01,rabi,loamy,medium
+30,40,24,22.5,72.4,6.4,70.5,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+34,45,28,25.1,69.2,6.1,65.2,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+26,38,22,20.4,75.8,6.7,76.4,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+32,42,26,24.0,71.1,6.3,72.1,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+28,41,23,21.5,73.9,6.5,61.8,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+35,46,29,26.3,68.0,6.2,74.9,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+31,42,25,23.2,71.9,6.4,68.5,tomato,nashik,maharashtra,1800,2026-02-01,all,loamy,medium
+24,38,22,18.4,68.2,6.5,62.4,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+28,42,26,21.1,65.4,6.2,58.9,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+19,35,19,16.2,72.1,6.9,68.5,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+26,40,24,20.0,67.3,6.4,64.1,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+22,37,21,17.5,70.1,6.7,53.2,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+29,43,28,22.3,64.0,6.3,67.4,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+25,39,23,19.1,68.5,6.5,60.7,onion,lasalgaon,maharashtra,2200,2026-02-01,rabi,loamy,medium
+32,45,28,26.4,62.8,6.4,75.4,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
+35,48,32,28.1,60.2,6.8,80.1,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
+28,42,25,23.5,65.4,6.1,68.9,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
+30,44,30,25.0,61.9,6.5,72.3,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
+26,40,24,21.8,66.1,6.3,64.5,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
+29,46,29,27.2,59.5,6.6,85.2,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
+25,41,27,24.3,63.0,6.2,70.8,chilli,guntur,andhra pradesh,7800,2026-02-01,kharif,loamy,medium
